@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM  from "react-dom/client";
 import logo from '../assets/food-logo.png';
-
+import Header from './components/Header'
 const resObj = [
     {
         "info": {
