@@ -1,3 +1,4 @@
+import logo from '../../assets/food-logo.png';
 
 const Header = () =>
 {
