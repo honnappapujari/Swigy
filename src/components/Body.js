@@ -1,5 +1,5 @@
 import RestroCard from './Restrocard';
-import resObj from '../utils/mockdata'
+import {resObj} from '../utils/mockdata'
 
 const Body = () =>
 {

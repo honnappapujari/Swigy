@@ -1,5 +1,5 @@
 
-const resObj = [
+export const resObj = [
     {
         "info": {
             "id": "160120",
@@ -1568,4 +1568,3 @@ const resObj = [
     }
 ];
 
-export default resObj;
