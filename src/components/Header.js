@@ -1,6 +1,6 @@
 import logo from '../../assets/food-logo.png';
 
-const Header = () =>
+export const Header = () =>
 {
     return (
         <nav className="navbar bg-body-tertiary">
