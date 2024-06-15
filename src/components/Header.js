@@ -1,11 +1,10 @@
-import logo from '../../assets/food-logo.png';
-
+import {LOGO_URL} from '../utils/constant'
 export const Header = () =>
 {
     return (
         <nav className="navbar bg-body-tertiary">
         <div className="container-fluid">
-        <a className="navbar-brand"><img height={100} src={logo}/></a>
+        <a className="navbar-brand"><img height={20} src={LOGO_URL}/></a>
         <ul className="nav justify-content-end">
             <li className="nav-item">
                 <a className="nav-link active" aria-current="page" href="#">Active</a>
