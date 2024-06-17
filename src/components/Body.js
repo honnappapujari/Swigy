@@ -1,10 +1,13 @@
 import RestroCard from './Restrocard';
 import {resObj} from '../utils/mockdata'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const Body = () =>
 {
     const [usestateList, setUseStateList] = useState(resObj);
+
+    useEffect(() => {console.log('useeffect'), []});
+    console.log('body rendered');
     return (
         <div className="body">
             <div className='form-group'>
@@ -21,7 +24,6 @@ const Body = () =>
             <div className="restro-container grid gap-3">
                 {/* Note :Dont use index as key */}
                 {
-
 usestateList.map((restorent) => <RestroCard key={restorent.info.id} resData ={restorent} />)}           
                 
             </div>
