@@ -2,7 +2,6 @@ const RestroCard = (props) =>
 {
     const {resData} = props;  
     const {avgRating,cuisines,name,areaName,cloudinaryImageId,sla} = resData?.info; 
-    console.log(resData)
 
     return(
 
