@@ -1,6 +1,8 @@
-import {LOGO_URL} from '../utils/constant'
+import {LOGO_URL} from '../utils/constant';
+import { useState } from 'react';
 export const Header = () =>
 {
+    const [login, setLogin] = useState('Login');
     return (
         <nav className="navbar bg-body-tertiary">
         <div className="container-fluid">
@@ -16,7 +18,7 @@ export const Header = () =>
                 <a className="nav-link" href="#">Link</a>
             </li>
             <li className="nav-item">
-                <a className="nav-link disabled" aria-disabled="true">Disabled</a>
+                <a className="nav-link" onClick={() => login === 'Login'? setLogin('Logout') : setLogin('Login')}>{login}</a>
             </li>
         </ul>
         </div>

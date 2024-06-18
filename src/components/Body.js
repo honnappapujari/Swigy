@@ -15,12 +15,7 @@ const Body = () =>
     const json = await data.json();
     setUseStateList(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants)
     }
-    if(usestateList == 0)
-    {
-            return <ShimmerSimpleGallery card imageHeight={300} caption />
-          
-    }
-    return (
+    return usestateList == 0 ? <ShimmerSimpleGallery card imageHeight={300} caption /> :( 
         <div className="body">
             <div className='form-group'>
                 <button type='button' className='btn btn-sm btn-primary' onClick={ () =>
