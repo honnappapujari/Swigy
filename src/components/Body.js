@@ -1,12 +1,14 @@
 import RestroCard from './Restrocard';
 import {resObj} from '../utils/mockdata'
-import { ShimmerSimpleGallery } from "react-shimmer-effects";
+// import { ShimmerSimpleGallery } from "react-shimmer-effects";
 
 import { useState, useEffect } from 'react';
 
 const Body = () =>
 {
+    console.log('body render')
     const [usestateList, setUseStateList] = useState([]);
+    const [searchText, setSearchText] = useState('');
     useEffect(() => {getData()}, []);
 
     const getData = async() =>
@@ -15,14 +17,25 @@ const Body = () =>
     const json = await data.json();
     setUseStateList(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants)
     }
-    return usestateList == 0 ? <ShimmerSimpleGallery card imageHeight={300} caption /> :( 
+    return usestateList == 0 ? <h1>Loading...</h1> :( 
         <div className="body">
-            <div className='form-group'>
+            <div className="input-group mt-2 w-50">
+  <input type="text" className="form-control" placeholder="Recipient's username" aria-label="Restorent Name" aria-describedby="button-addon2" value={searchText} onChange={(e) => {
+    return setSearchText(e.target.value)
+  }}/>
+  <button className="btn btn-outline-secondary" type="button" id="button-addon2" onClick={() => {
+   let newFilterList = usestateList.filter((a) => {
+        return a.info.name.toLowerCase().includes(searchText.toLocaleLowerCase());
+    })
+    setUseStateList(newFilterList);
+
+  }}>Search</button>
+</div>
+            <div className='form-group mb-2'>
                 <button type='button' className='btn btn-sm btn-primary' onClick={ () =>
                 {
                     const newList = resObj.filter((restorent) => restorent.info.avgRating < 4);
                     setUseStateList(newList)
-
                 } 
                     
                 }
