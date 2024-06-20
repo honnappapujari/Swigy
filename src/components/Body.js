@@ -6,17 +6,19 @@ import { useState, useEffect } from 'react';
 
 const Body = () =>
 {
-    console.log('body render')
+
     const [usestateList, setUseStateList] = useState([]);
+    const [searchUsestateList, setSearchUseStateList] = useState([]);
     const [searchText, setSearchText] = useState('');
     useEffect(() => {getData()}, []);
-
     const getData = async() =>
     {
         const data =  await fetch('https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.96340&lng=77.58550&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING');
     const json = await data.json();
     setUseStateList(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants)
-    }
+    setSearchUseStateList(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants)
+    
+}
     return usestateList == 0 ? <h1>Loading...</h1> :( 
         <div className="body">
             <div className="input-group mt-2 w-50">
@@ -27,7 +29,8 @@ const Body = () =>
    let newFilterList = usestateList.filter((a) => {
         return a.info.name.toLowerCase().includes(searchText.toLocaleLowerCase());
     })
-    setUseStateList(newFilterList);
+    // setUseStateList(newFilterList);
+    setSearchUseStateList(newFilterList)
 
   }}>Search</button>
 </div>
@@ -44,7 +47,7 @@ const Body = () =>
             <div className="restro-container">
                 {/* Note :Dont use index as key */}
                 {
-usestateList.map((restorent) => <RestroCard key={restorent.info.id} resData ={restorent} />)}           
+searchUsestateList.map((restorent) => <RestroCard key={restorent.info.id} resData ={restorent} />)}           
                 
             </div>
         </div>
