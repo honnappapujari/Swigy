@@ -4,3 +4,5 @@ Two Type Export/import
 -named export/import - {Component}
 
 - Whenver state variable get update react reconcilation cycle(Re-render the components)
+
+-cors proxy is giving url that bypass the cors error
