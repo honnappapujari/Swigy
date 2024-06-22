@@ -1,7 +1,12 @@
 import {LOGO_URL} from '../utils/constant';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 export const Header = () =>
 {
+    useEffect(() =>
+    {
+        console.log('use effect')
+    }, [])
+    console.log('header render')
     const [login, setLogin] = useState('Login');
     return (
         <nav className="navbar bg-body-tertiary">
