@@ -22,7 +22,8 @@ const AppLayout = () =>
 }
 const Approuter = createBrowserRouter([
     {
-        path: '/', element : <AppLayout />
+        path: '/', element : <AppLayout />,
+        errorElement: <AppLayout />
     },
     {
         path: '/about', element:<About/>
