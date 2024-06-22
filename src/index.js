@@ -3,6 +3,8 @@ import ReactDOM  from "react-dom/client";
 import logo from '../assets/food-logo.png';
 import {Header} from './components/Header';
 import Body from './components/Body';
+import { About } from "./components/About";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const createEl = React.createElement('h1', {}, 'hello world');
 
@@ -17,8 +19,16 @@ const AppLayout = () =>
     
     )
 }
+const Approuter = createBrowserRouter([
+    {
+        path: '/', element : <AppLayout />
+    },
+    {
+        path: '/about', element:<About/>
+    }
+])
 
 
 const createRoot = ReactDOM.createRoot(document.getElementById('root'));
 
-createRoot.render(<AppLayout/>);
+createRoot.render(<RouterProvider router={Approuter} />);
