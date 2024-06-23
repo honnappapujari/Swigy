@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import {LOGO_URL} from '../utils/constant';
 import { useState, useEffect } from 'react';
 export const Header = () =>
@@ -14,13 +15,13 @@ export const Header = () =>
         <a className="navbar-brand"><img height={20} src={LOGO_URL}/></a>
         <ul className="nav justify-content-end">
             <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">Active</a>
+                <Link className="nav-link active" aria-current="page" to="/">Home</Link>
             </li>
             <li className="nav-item">
-                <a className="nav-link" href="#">Link</a>
+                <Link className="nav-link" to="/about">About</Link>
             </li>
             <li className="nav-item">
-                <a className="nav-link" href="#">Link</a>
+                <Link className="nav-link" to="contact">Contact us</Link>
             </li>
             <li className="nav-item">
                 <a className="nav-link" onClick={() => login === 'Login'? setLogin('Logout') : setLogin('Login')}>{login}</a>
