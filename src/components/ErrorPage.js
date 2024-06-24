@@ -7,6 +7,7 @@ export const ErrorPage = () =>
     <>
     <h1>OOps! {err.status} - {err.statusText}</h1>
     <p>{err.data}</p>
+    <p><small>{err.data}</small></p>
     </>
     )
 }
