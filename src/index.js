@@ -5,6 +5,7 @@ import {Header} from './components/Header';
 import Body from './components/Body';
 import { About } from "./components/About";
 import { Contact } from "./components/Contact";
+import {RestorentMenu} from "./components/RestorentMenu";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import { ErrorPage } from "./components/ErrorPage";
 
@@ -33,6 +34,9 @@ const Approuter = createBrowserRouter([
             },
             {
                 path : '/contact', element: <Contact />
+            },
+            {
+                path : '/restorent/:resid', element: <RestorentMenu />
             }
         ],
         errorElement: <ErrorPage/>
